@@ -31,11 +31,20 @@ Add these 4 secrets:
 
 ### 3. Deploy & Monitor
 ```bash
-# Push changes to trigger first run
-git commit -am "Configure monitoring for my route"
-git push
+### Deployment
 
-# Or manually trigger: Actions → Configurable Flight Monitor → Run workflow
+```bash
+# Test your configuration first
+python validate_config.py
+
+# Push your changes
+git add .
+git commit -m "Configure flight monitoring for [your route]"  
+git push origin main
+
+# Monitor runs in Actions tab
+# Or trigger manually: Actions → Configurable Flight Monitor → Run workflow
+```
 ```
 
 ## 🔧 Route Configuration
@@ -253,3 +262,142 @@ For more details about the API parameters and response format:
 ## License
 
 This project is for educational purposes. Please respect SerpApi's terms of service and rate limits.
+
+## 📧 Email Report Features
+
+Each automated email report includes:
+
+### 📊 Executive Summary
+- Best deal found with price and details
+- Average price across all options  
+- Total flight options discovered
+- API calls used for the scan
+
+### 🏆 Top 5 Best Deals
+- Price, airline, and route details
+- Flight duration and connection info
+- Direct vs connecting flights
+- Carbon emissions data
+
+### 📅 Monthly Breakdown  
+- Price analysis by month
+- Best deals for each month
+- Average prices and seasonal trends
+
+### 📈 Market Insights
+- Price range and spread analysis
+- Direct flight availability
+- Departure day comparisons
+- Route-specific trend indicators
+
+### 📎 Attachments
+- JSON file with complete flight data
+- Raw search results for further analysis
+
+## 📊 API Usage & Quota Management
+
+### Quota Efficiency
+- **SerpApi Free Tier**: 100 searches/month
+- **SerpApi Paid Plans**: 250+ searches/month
+- **Typical Usage**: 26 calls per complete scan
+- **Monthly Monitoring**: ~182 calls (7 scans)
+
+### Cost Estimates
+- **Free Tier**: 3-4 complete scans per month
+- **Basic Plan ($50/month)**: 9+ complete scans  
+- **Pro Plan**: Unlimited monitoring
+
+### Smart Scheduling
+The default 7-scan schedule provides:
+- **84% quota utilization** (efficient)
+- **Bi-weekly coverage** (comprehensive)
+- **16% buffer** for manual searches
+
+## 🚨 Troubleshooting
+
+### Common Issues
+
+**"No flights found":**
+- Check if travel dates are too far in the future
+- Verify airport codes are correct
+- Ensure departure/arrival cities have flights between them
+
+**GitHub Actions failing:**
+- Verify all 4 secrets are correctly set
+- Check SerpApi key has remaining quota
+- Ensure config.env has valid airport codes
+
+**Email not received:**
+- Check spam/junk folder
+- Verify Gmail app password (not regular password)  
+- Ensure 2FA is enabled on Gmail account
+
+### Debug Steps
+1. Test configuration locally first
+2. Check GitHub Actions logs in repository
+3. Verify SerpApi dashboard for quota/errors
+4. Test with manual workflow trigger
+
+## 🎯 Best Practices
+
+### Route Selection
+- **Popular routes**: More flight options, better prices
+- **Multiple airports**: Include nearby airports (LHR,LGW,STN)
+- **Flexible dates**: Wider date ranges find better deals
+
+### Monitoring Strategy  
+- **Peak seasons**: Increase monitoring frequency
+- **Off-peak**: Reduce scans to conserve quota
+- **Special events**: Monitor around holidays/festivals
+
+### Email Management
+- **Filters**: Set up Gmail filters for flight reports
+- **Folders**: Organize reports by route/month
+- **Mobile**: Enable mobile notifications for best deals
+
+## 📈 Future Enhancements
+
+Planned features:
+- **Multi-route monitoring** in single deployment
+- **Price alert thresholds** for instant notifications  
+- **Historical price tracking** and trend analysis
+- **Mobile app integration**
+- **Booking platform integration**
+- **Slack/Discord notifications**
+
+## 🤝 Contributing
+
+We welcome contributions!
+
+### Easy Contributions
+- Add more route examples
+- Improve documentation
+- Test with different airports
+- Report bugs or issues
+
+### Advanced Contributions
+- Add new notification channels
+- Implement price alerting  
+- Add multi-route support
+- Optimize API usage algorithms
+
+### Getting Started
+1. Fork the repository
+2. Create a feature branch  
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+---
+
+## 🎯 Quick Start Summary
+
+1. **🍴 Fork** this repository to your GitHub account
+2. **⚙️ Edit** `config.env` with your desired route  
+3. **🔐 Add** 4 GitHub secrets (API key + email settings)
+4. **🚀 Deploy** by pushing changes to GitHub
+5. **📧 Enjoy** automated flight reports every few days
+
+**🎉 That's it!** Your personalized flight monitor will start running and you'll receive detailed email reports with the best deals for your route.
+
+**✈️ Happy Flight Hunting!** 🗺️
