@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Automated Flight Monitor with Email Reports
-Runs complete traditional weekend flight search and sends detailed email report
+Configurable Automated Flight Monitor with Email Reports
+Easily customizable for any route via config.env file
 """
 
 import os
@@ -18,38 +18,76 @@ from typing import List, Dict, Optional
 import requests
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+# Load environment variables and configuration
+load_dotenv()  # Load API keys and email settings
+load_dotenv('config.env')  # Load flight configuration
 
-class AutomatedFlightMonitor:
-    """Automated flight monitoring with email reporting"""
+class ConfigurableFlightMonitor:
+    """Configurable automated flight monitoring with email reporting"""
     
     def __init__(self):
+        # API and Email credentials
         self.api_key = os.getenv('SERPAPI_KEY')
         self.email_user = os.getenv('EMAIL_USER')
         self.email_pass = os.getenv('EMAIL_PASS')
         self.email_to = os.getenv('EMAIL_TO')
         
         if not all([self.api_key, self.email_user, self.email_pass, self.email_to]):
-            raise ValueError("Missing required environment variables")
+            raise ValueError("Missing required environment variables: SERPAPI_KEY, EMAIL_USER, EMAIL_PASS, EMAIL_TO")
         
+        # Route configuration from config.env
+        self.departure_city = os.getenv('DEPARTURE_CITY', 'Tel Aviv')
+        self.departure_code = os.getenv('DEPARTURE_CODE', 'TLV')
+        self.arrival_city = os.getenv('ARRIVAL_CITY', 'Paris')
+        self.arrival_codes = os.getenv('ARRIVAL_CODES', 'CDG,ORY')
+        
+        # Trip configuration
+        self.travel_year = int(os.getenv('TRAVEL_YEAR', 2026))
+        self.start_month = int(os.getenv('START_MONTH', 4))
+        self.end_month = int(os.getenv('END_MONTH', 6))
+        self.departure_days = [int(d) for d in os.getenv('DEPARTURE_DAYS', '2,3').split(',')]  # Wed, Thu
+        self.trip_duration = int(os.getenv('TRIP_DURATION_DAYS', 4))
+        
+        # Email and other settings
+        self.email_subject_prefix = os.getenv('EMAIL_SUBJECT_PREFIX', 'Flight Monitor Report')
+        self.currency = os.getenv('CURRENCY', 'USD')
+        self.adults = int(os.getenv('ADULTS', 1))
+        self.api_timeout = int(os.getenv('API_TIMEOUT_SECONDS', 30))
+        
+        # API setup
         self.base_url = "https://serpapi.com/search"
         self.api_calls_used = 0
         self.results = []
         
-    def get_traditional_weekend_dates(self, start_month: int, end_month: int, year: int) -> List[tuple]:
-        """Get all Wed→Sun and Thu→Mon weekend dates"""
+        print(f"🛫 Configured for {self.departure_city} ({self.departure_code}) → {self.arrival_city} ({self.arrival_codes})")
+        print(f"📅 Monitoring {self.get_month_name(self.start_month)}-{self.get_month_name(self.end_month)} {self.travel_year}")
+        print(f"🗓️  Departure days: {', '.join([self.get_day_name(d) for d in self.departure_days])}")
+        print(f"⏱️  Trip duration: {self.trip_duration} days")
+    
+    def get_month_name(self, month_num):
+        """Convert month number to name"""
+        months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        return months[month_num]
+    
+    def get_day_name(self, day_num):
+        """Convert day number to name"""
+        days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        return days[day_num]
+        
+    def get_weekend_dates(self) -> List[tuple]:
+        """Get weekend dates based on configuration"""
         weekend_trips = []
-        current_date = datetime(year, start_month, 1)
-        end_date = datetime(year, end_month + 1, 1) - timedelta(days=1)
+        current_date = datetime(self.travel_year, self.start_month, 1)
+        end_date = datetime(self.travel_year, self.end_month + 1, 1) - timedelta(days=1)
         
         while current_date <= end_date:
-            if current_date.weekday() in [2, 3]:  # Wed, Thu only
+            if current_date.weekday() in self.departure_days:
                 departure = current_date.strftime('%Y-%m-%d')
-                return_date = (current_date + timedelta(days=4)).strftime('%Y-%m-%d')
+                return_date = (current_date + timedelta(days=self.trip_duration)).strftime('%Y-%m-%d')
                 
                 return_datetime = datetime.strptime(return_date, '%Y-%m-%d')
-                if return_datetime.month <= end_month:
+                if return_datetime.month <= self.end_month:
                     weekend_trips.append((departure, return_date))
             
             current_date += timedelta(days=1)
@@ -60,19 +98,19 @@ class AutomatedFlightMonitor:
         """Search for a single flight"""
         params = {
             'engine': 'google_flights',
-            'departure_id': 'TLV',
-            'arrival_id': 'CDG,ORY',
+            'departure_id': self.departure_code,
+            'arrival_id': self.arrival_codes,
             'outbound_date': departure_date,
             'return_date': return_date,
-            'currency': 'USD',
+            'currency': self.currency,
             'hl': 'en',
             'type': '1',
-            'adults': '1',
+            'adults': str(self.adults),
             'api_key': self.api_key
         }
         
         try:
-            response = requests.get(self.base_url, params=params, timeout=30)
+            response = requests.get(self.base_url, params=params, timeout=self.api_timeout)
             self.api_calls_used += 1
             
             if response.status_code == 200:
@@ -113,15 +151,17 @@ class AutomatedFlightMonitor:
         }
     
     def run_complete_scan(self) -> List[Dict]:
-        """Run complete traditional weekend scan"""
-        print("🗼 Starting Automated Traditional Weekend Flight Scan")
+        """Run complete weekend scan"""
+        print(f"� Starting Automated Flight Scan: {self.departure_city} → {self.arrival_city}")
         print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print("="*60)
         
-        # Get all traditional weekend dates for April-June 2026
-        weekend_dates = self.get_traditional_weekend_dates(4, 6, 2026)
-        print(f"📅 Scanning {len(weekend_dates)} traditional weekend dates")
-        print("🎯 Wed→Sun and Thu→Mon trips only")
+        # Get weekend dates based on configuration
+        weekend_dates = self.get_weekend_dates()
+        departure_day_names = ', '.join([self.get_day_name(d) for d in self.departure_days])
+        print(f"📅 Scanning {len(weekend_dates)} weekend dates")
+        print(f"🎯 Departure days: {departure_day_names}")
+        print(f"⏱️  Trip duration: {self.trip_duration} days")
         
         results = []
         
@@ -129,7 +169,7 @@ class AutomatedFlightMonitor:
             dep_day = datetime.strptime(dep_date, '%Y-%m-%d').strftime('%a')
             ret_day = datetime.strptime(ret_date, '%Y-%m-%d').strftime('%a')
             
-            print(f"  {i:2d}/26: {dep_day} {dep_date} → {ret_day} {ret_date}")
+            print(f"  {i:2d}/{len(weekend_dates)}: {dep_day} {dep_date} → {ret_day} {ret_date}")
             
             search_result = self.search_flight(dep_date, ret_date)
             
@@ -137,7 +177,7 @@ class AutomatedFlightMonitor:
                 flight_info = self.extract_flight_info(search_result, dep_date, ret_date)
                 if flight_info:
                     results.append(flight_info)
-                    print(f"        ✅ ${flight_info['price']} USD ({flight_info['airline']})")
+                    print(f"        ✅ ${flight_info['price']} {self.currency} ({flight_info['airline']})")
                 else:
                     print(f"        ❌ No flights found")
             else:
@@ -211,6 +251,9 @@ class AutomatedFlightMonitor:
     def generate_email_report(self, results: List[Dict], analysis: Dict) -> str:
         """Generate HTML email report"""
         now = datetime.now()
+        route_title = f"{self.departure_city} → {self.arrival_city}"
+        period_text = f"{self.get_month_name(self.start_month)}-{self.get_month_name(self.end_month)} {self.travel_year}"
+        departure_days_text = ', '.join([self.get_day_name(d) for d in self.departure_days])
         
         html = f"""
         <!DOCTYPE html>
@@ -238,8 +281,8 @@ class AutomatedFlightMonitor:
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>🗼 Flight Monitor Report</h1>
-                    <h2>Tel Aviv → Paris Traditional Weekends</h2>
+                    <h1>✈️ Flight Monitor Report</h1>
+                    <h2>{route_title}</h2>
                     <p>{now.strftime('%B %d, %Y at %H:%M UTC')}</p>
                 </div>
                 
@@ -276,7 +319,7 @@ class AutomatedFlightMonitor:
             
             html += f"""
                     <div class="deal">
-                        <strong>#{i}. <span class="price">${deal['price']} USD</span></strong> - 
+                        <strong>#{i}. <span class="price">${deal['price']} {self.currency}</span></strong> - 
                         <span class="airline">{deal['airline']}</span><br>
                         📅 {deal['departure_day']} {deal['departure_date']} → {deal['return_day']} {deal['return_date']}<br>
                         ✈️ {duration_hours}h {duration_mins}m | <span class="direct">{direct_text}</span> | 
@@ -296,10 +339,10 @@ class AutomatedFlightMonitor:
             html += f"""
                     <div class="month">
                         <strong>{month}</strong>: {data['count']} options | 
-                        From <span class="price">${data['min_price']} USD</span> | 
-                        Avg: ${data['avg_price']} USD<br>
+                        From <span class="price">${data['min_price']} {self.currency}</span> | 
+                        Avg: ${data['avg_price']} {self.currency}<br>
                         🏆 Best: {best_deal['departure_day']} {best_deal['departure_date']} - 
-                        <span class="price">${best_deal['price']} USD</span> ({best_deal['airline']})
+                        <span class="price">${best_deal['price']} {self.currency}</span> ({best_deal['airline']})
                     </div>
             """
         
@@ -309,18 +352,19 @@ class AutomatedFlightMonitor:
                 <div class="summary">
                     <h2>📈 Market Insights</h2>
                     <ul>
-                        <li><strong>Price Range:</strong> ${analysis.get('price_min', 0)} - ${analysis.get('price_max', 0)} USD (${analysis.get('price_max', 0) - analysis.get('price_min', 0)} spread)</li>
+                        <li><strong>Route:</strong> {route_title}</li>
+                        <li><strong>Period:</strong> {period_text}</li>
+                        <li><strong>Departure Days:</strong> {departure_days_text}</li>
+                        <li><strong>Trip Duration:</strong> {self.trip_duration} days</li>
+                        <li><strong>Price Range:</strong> ${analysis.get('price_min', 0)} - ${analysis.get('price_max', 0)} {self.currency} (${analysis.get('price_max', 0) - analysis.get('price_min', 0)} spread)</li>
                         <li><strong>Direct Flights:</strong> {len(analysis.get('direct_flights', []))} out of {analysis.get('total_options', 0)} options</li>
                         <li><strong>Best Month:</strong> {min(analysis.get('by_month', {}).items(), key=lambda x: x[1]['min_price'])[0] if analysis.get('by_month') else 'N/A'}</li>
-                        <li><strong>Wednesday vs Thursday:</strong> 
-                            Wed avg: ${analysis.get('by_day', {}).get('Wednesday', {}).get('avg_price', 0)} | 
-                            Thu avg: ${analysis.get('by_day', {}).get('Thursday', {}).get('avg_price', 0)}</li>
                     </ul>
                 </div>
                 
                 <div class="footer">
-                    <p>🤖 Automated Flight Monitor | Next scan in ~4-5 days</p>
-                    <p>Monitoring April-June 2026 traditional weekends (Wed→Sun, Thu→Mon)</p>
+                    <p>🤖 Automated Flight Monitor | Configurable for any route</p>
+                    <p>Monitoring {period_text} weekend trips ({departure_days_text} departures)</p>
                 </div>
             </div>
         </body>
@@ -334,7 +378,8 @@ class AutomatedFlightMonitor:
         try:
             # Create message
             msg = MimeMultipart('alternative')
-            msg['Subject'] = f"Flight Monitor Report - Best: ${analysis.get('price_min', 0)} USD - {datetime.now().strftime('%b %d')}"
+            route_text = f"{self.departure_city} → {self.arrival_city}"
+            msg['Subject'] = f"{self.email_subject_prefix} - {route_text} - Best: ${analysis.get('price_min', 0)} {self.currency} - {datetime.now().strftime('%b %d')}"
             msg['From'] = self.email_user
             msg['To'] = self.email_to
             
@@ -346,6 +391,20 @@ class AutomatedFlightMonitor:
             # Add JSON attachment with raw data
             json_data = {
                 'scan_date': datetime.now().isoformat(),
+                'route': {
+                    'departure_city': self.departure_city,
+                    'departure_code': self.departure_code,
+                    'arrival_city': self.arrival_city,
+                    'arrival_codes': self.arrival_codes
+                },
+                'configuration': {
+                    'travel_year': self.travel_year,
+                    'start_month': self.start_month,
+                    'end_month': self.end_month,
+                    'departure_days': self.departure_days,
+                    'trip_duration': self.trip_duration,
+                    'currency': self.currency
+                },
                 'analysis': analysis,
                 'all_results': results
             }
@@ -373,17 +432,33 @@ class AutomatedFlightMonitor:
     def save_local_backup(self, results: List[Dict], analysis: Dict):
         """Save results locally as backup"""
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        filename = f"flight_monitor_backup_{timestamp}.json"
+        route_slug = f"{self.departure_code}_{self.arrival_codes.replace(',', '_')}"
+        filename = f"flight_monitor_{route_slug}_{timestamp}.json"
         
         backup_data = {
             'scan_date': datetime.now().isoformat(),
+            'route': {
+                'departure_city': self.departure_city,
+                'departure_code': self.departure_code,
+                'arrival_city': self.arrival_city,
+                'arrival_codes': self.arrival_codes,
+                'route_display': f"{self.departure_city} → {self.arrival_city}"
+            },
+            'configuration': {
+                'travel_year': self.travel_year,
+                'start_month': self.start_month,
+                'end_month': self.end_month,
+                'departure_days': self.departure_days,
+                'trip_duration': self.trip_duration,
+                'currency': self.currency,
+                'adults': self.adults
+            },
             'analysis': analysis,
             'results': results,
             'metadata': {
                 'api_calls_used': self.api_calls_used,
-                'scan_type': 'traditional_weekends_complete',
-                'destination': 'Paris (CDG, ORY)',
-                'origin': 'Tel Aviv (TLV)'
+                'scan_type': 'configurable_weekend_monitor',
+                'total_possible_dates': len(self.get_weekend_dates())
             }
         }
         
@@ -395,12 +470,12 @@ class AutomatedFlightMonitor:
 
 def main():
     """Main execution function"""
-    print("🤖 Automated Flight Monitor Starting...")
+    print("🤖 Configurable Flight Monitor Starting...")
     print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
     
     try:
         # Initialize monitor
-        monitor = AutomatedFlightMonitor()
+        monitor = ConfigurableFlightMonitor()
         
         # Run complete scan
         results = monitor.run_complete_scan()
@@ -420,8 +495,10 @@ def main():
         monitor.send_email_report(results, analysis)
         
         print("\n" + "="*60)
-        print("✅ AUTOMATED FLIGHT MONITOR COMPLETE")
-        print(f"📊 Found {len(results)} options, best: ${analysis['price_min']} USD")
+        print("✅ CONFIGURABLE FLIGHT MONITOR COMPLETE")
+        route_display = f"{monitor.departure_city} → {monitor.arrival_city}"
+        print(f"📊 Route: {route_display}")
+        print(f"✈️  Found {len(results)} options, best: ${analysis['price_min']} {monitor.currency}")
         print(f"📧 Email report sent to {monitor.email_to}")
         print(f"💾 Backup saved: {backup_file}")
         print(f"📞 API calls used: {monitor.api_calls_used}/250 monthly")

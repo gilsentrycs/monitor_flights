@@ -1,74 +1,86 @@
-# 🗼 Automated Flight Monitor
+# ✈️ Configurable Flight Monitor
 
-Smart automated flight price monitoring for Tel Aviv → Paris traditional weekend trips with email reports.
+**Easily configurable automated flight price monitoring for any route with email reports and GitHub Actions automation.**
 
-## 📊 Overview
+## 🎯 Key Features
 
-This system automatically monitors flight prices for traditional weekend trips (Wednesday→Sunday and Thursday→Monday) from Tel Aviv to Paris for April-June 2026. It runs on a smart schedule using GitHub Actions and sends detailed email reports with pricing analysis and trends.
+- **🌍 Any Route**: Easily configure source and destination cities
+- **📅 Flexible Dates**: Customize travel period, departure days, and trip duration  
+- **📧 Email Reports**: Beautiful HTML reports with price analysis and trends
+- **🤖 GitHub Actions**: Automated monitoring with smart scheduling
+- **📊 Smart Analysis**: Price trends, monthly breakdown, and market insights
+- **💾 Data Backup**: JSON backups stored as GitHub artifacts
+- **🔧 Easy Setup**: Just configure a few settings and deploy
 
-### 🎯 Key Features
+## 🚀 Quick Setup (3 Steps)
 
-- **Traditional Weekend Focus**: Only Wed→Sun and Thu→Mon 4-day trips
-- **Complete Coverage**: Monitors all 26 possible traditional weekend dates  
-- **Smart Scheduling**: 7 runs over 30 days (182 API calls, 84% quota usage)
-- **Email Reports**: Beautiful HTML reports with price analysis and trends
-- **Automated Backups**: JSON data stored as GitHub artifacts
-- **Quota Efficient**: Uses only 10.4% of monthly SerpApi quota per complete scan
-
-### 📅 Monitoring Schedule
-
-The system runs on an optimized schedule to maximize market insights:
-
-1. **Sept 17** - Baseline market scan
-2. **Sept 23** - Early trend detection  
-3. **Sept 26** - Early trend detection
-4. **Oct 2** - Market trend monitoring
-5. **Oct 8** - Peak season preparation
-6. **Oct 13** - Peak season preparation
-7. **Oct 17** - Final month analysis
-
-## 🚀 Quick Setup
-
-### 1. Create GitHub Repository
-
+### 1. Fork & Configure
 ```bash
-# Clone or fork this repository
-git clone <your-repo-url>
-cd flight_checker
-
-# Or create new repository from these files
+# Fork this repository to your GitHub account
+# Edit config.env for your desired route
 ```
 
-### 2. Configure GitHub Secrets
+### 2. Set GitHub Secrets
+Go to your repository → Settings → Secrets → Actions
 
-Go to your GitHub repository → Settings → Secrets and variables → Actions
+Add these 4 secrets:
+- `SERPAPI_KEY` - Your SerpApi API key  
+- `EMAIL_USER` - Gmail address for sending reports
+- `EMAIL_PASS` - Gmail app password (not regular password)
+- `EMAIL_TO` - Email address to receive reports
 
-Add these **Repository Secrets**:
-
-| Secret Name | Description | Example |
-|-------------|-------------|---------|
-| `SERPAPI_KEY` | Your SerpApi API key | `6357aac8ff54c20e778...` |
-| `EMAIL_USER` | Gmail address for sending reports | `your.email@gmail.com` |
-| `EMAIL_PASS` | Gmail app password (not regular password) | `abcd efgh ijkl mnop` |
-| `EMAIL_TO` | Email address to receive reports | `recipient@email.com` |
-
-### 3. Set Up Gmail App Password
-
-1. Enable 2-Factor Authentication on your Gmail account
-2. Go to [Google App Passwords](https://myaccount.google.com/apppasswords)
-3. Generate an app password for "Mail"
-4. Use this 16-character password as `EMAIL_PASS` secret
-
-### 4. Deploy and Test
-
+### 3. Deploy & Monitor
 ```bash
-# Push your code to GitHub
-git add .
-git commit -m "Set up automated flight monitoring"
-git push origin main
+# Push changes to trigger first run
+git commit -am "Configure monitoring for my route"
+git push
 
-# Test with manual run
-# Go to Actions tab → Smart Flight Monitoring → Run workflow
+# Or manually trigger: Actions → Configurable Flight Monitor → Run workflow
+```
+
+## 🔧 Route Configuration
+
+Edit `config.env` to customize your monitoring:
+
+```env
+# Route Configuration - EDIT THESE VALUES
+DEPARTURE_CITY="Tel Aviv"
+DEPARTURE_CODE="TLV"
+ARRIVAL_CITY="Paris"  
+ARRIVAL_CODES="CDG,ORY"
+
+# Trip Configuration
+TRAVEL_YEAR=2026
+START_MONTH=4    # April
+END_MONTH=6      # June  
+DEPARTURE_DAYS="2,3"  # Wednesday, Thursday
+TRIP_DURATION_DAYS=4  # 4-day trips
+
+# Email Configuration
+EMAIL_SUBJECT_PREFIX="Flight Monitor Report"
+```
+
+### Example Configurations
+
+**London Monitoring:**
+```env
+DEPARTURE_CITY="New York"
+DEPARTURE_CODE="JFK"
+ARRIVAL_CITY="London"
+ARRIVAL_CODES="LHR,LGW,STN"
+```
+
+**Weekend Getaways:**
+```env
+DEPARTURE_DAYS="4,5"  # Friday, Saturday departures
+TRIP_DURATION_DAYS=3  # 3-day weekend trips
+```
+
+**Holiday Planning:**
+```env
+START_MONTH=11  # November
+END_MONTH=1     # January
+DEPARTURE_DAYS="0,1,2,3,4"  # Any weekday
 ```
 python tel_aviv_paris_flights.py
 ```

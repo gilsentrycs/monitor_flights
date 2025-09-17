@@ -24,9 +24,7 @@ ENV/
 Thumbs.db
 
 # Backup and temporary files
-flight_monitor_backup_*.json
-paris_flights_*.json
-weekend_flights_*.json
+flight_monitor_*.json
 *.tmp
 *.bak
 

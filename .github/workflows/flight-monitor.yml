@@ -1,4 +1,4 @@
-name: Smart Flight Monitoring
+name: Configurable Flight Monitor
 on:
   schedule:
     # Balanced strategy: 7 runs over 30 days (182 API calls, 84% quota)
