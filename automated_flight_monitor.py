@@ -9,9 +9,9 @@ import sys
 import json
 import smtplib
 import ssl
-from email.mime.text import MimeText
-from email.mime.multipart import MimeMultipart
-from email.mime.base import MimeBase
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
 from email import encoders
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
@@ -377,7 +377,7 @@ class ConfigurableFlightMonitor:
         """Send email report with results"""
         try:
             # Create message
-            msg = MimeMultipart('alternative')
+            msg = MIMEMultipart('alternative')
             route_text = f"{self.departure_city} → {self.arrival_city}"
             msg['Subject'] = f"{self.email_subject_prefix} - {route_text} - Best: ${analysis.get('price_min', 0)} {self.currency} - {datetime.now().strftime('%b %d')}"
             msg['From'] = self.email_user
@@ -385,7 +385,7 @@ class ConfigurableFlightMonitor:
             
             # Generate HTML report
             html_content = self.generate_email_report(results, analysis)
-            html_part = MimeText(html_content, 'html')
+            html_part = MIMEText(html_content, 'html')
             msg.attach(html_part)
             
             # Add JSON attachment with raw data
@@ -409,7 +409,7 @@ class ConfigurableFlightMonitor:
                 'all_results': results
             }
             
-            json_attachment = MimeBase('application', 'octet-stream')
+            json_attachment = MIMEBase('application', 'octet-stream')
             json_attachment.set_payload(json.dumps(json_data, indent=2).encode())
             encoders.encode_base64(json_attachment)
             json_attachment.add_header(
