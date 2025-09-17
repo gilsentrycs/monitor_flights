@@ -1,0 +1,38 @@
+# Environment variables (never commit these!)
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup and temporary files
+flight_monitor_backup_*.json
+paris_flights_*.json
+weekend_flights_*.json
+*.tmp
+*.bak
+
+# Logs
+*.log
+
+# Test files
+test_*.py
+*_test.py

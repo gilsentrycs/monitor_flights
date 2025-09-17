@@ -1,0 +1,1273 @@
+{
+  "search_metadata": {
+    "id": "68ca6c0dbc3f0b9bb5117477",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/631c14e949774d8a/68ca6c0dbc3f0b9bb5117477.json",
+    "created_at": "2025-09-17 08:06:37 UTC",
+    "processed_at": "2025-09-17 08:06:37 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhonEgoyMDI1LTEwLTE1agcIARIDVExWcgcIARIDQ0RHcgcIARIDT1JZGicSCjIwMjUtMTAtMjBqBwgBEgNDREdqBwgBEgNPUllyBwgBEgNUTFZCAQFIAXABmAEB&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/631c14e949774d8a/68ca6c0dbc3f0b9bb5117477.html",
+    "prettify_html_file": "https://serpapi.com/searches/631c14e949774d8a/68ca6c0dbc3f0b9bb5117477.prettify",
+    "total_time_taken": 2.93
+  },
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "en",
+    "gl": "us",
+    "type": "1",
+    "departure_id": "TLV",
+    "arrival_id": "CDG,ORY",
+    "outbound_date": "2025-10-15",
+    "return_date": "2025-10-20",
+    "adults": 1,
+    "currency": "USD"
+  },
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 05:35"
+          },
+          "arrival_airport": {
+            "name": "V\u00e1clav Havel Airport Prague",
+            "id": "PRG",
+            "time": "2025-10-15 08:40"
+          },
+          "duration": 245,
+          "airplane": "Boeing 737",
+          "airline": "Smartwings",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QS.png",
+          "travel_class": "Economy",
+          "flight_number": "QS 1287",
+          "legroom": "29 in",
+          "extensions": [
+            "Below average legroom (29 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 194 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "V\u00e1clav Havel Airport Prague",
+            "id": "PRG",
+            "time": "2025-10-15 12:25"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 14:15"
+          },
+          "duration": 110,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Smartwings",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QS.png",
+          "travel_class": "Economy",
+          "flight_number": "QS 1034",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 95 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 225,
+          "name": "V\u00e1clav Havel Airport Prague",
+          "id": "PRG"
+        }
+      ],
+      "total_duration": 580,
+      "carbon_emissions": {
+        "this_flight": 289000,
+        "typical_for_this_route": 282000,
+        "difference_percent": 2
+      },
+      "price": 552,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QS.png",
+      "extensions": [
+        "Checked baggage not included in price",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZzFSVXpFeU9EZDhVVk14TURNMEdnc0lsSzhERUFJYUExVlRSRGdjY0pTdkF3PT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJQUkciLG51bGwsIlFTIiwiMTI4NyJdLFsiUFJHIiwiMjAyNS0xMC0xNSIsIkNERyIsbnVsbCwiUVMiLCIxMDM0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 07:30"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 11:30"
+          },
+          "duration": 300,
+          "airplane": "Boeing 737",
+          "airline": "El Al",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+          "travel_class": "Economy",
+          "flight_number": "LY 221",
+          "ticket_also_sold_by": [
+            "Air France"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 275 kg"
+          ]
+        }
+      ],
+      "total_duration": 300,
+      "carbon_emissions": {
+        "this_flight": 276000,
+        "typical_for_this_route": 282000,
+        "difference_percent": -2
+      },
+      "price": 704,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1ZNV1RJeU1Sb0xDS1NsQkJBQ0dnTlZVMFE0SEhDa3BRUT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkxZIiwiMjIxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 05:40"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 09:40"
+          },
+          "duration": 300,
+          "airplane": "Boeing 737",
+          "airline": "El Al",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+          "travel_class": "Economy",
+          "flight_number": "LY 319",
+          "ticket_also_sold_by": [
+            "Air France"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 282 kg"
+          ]
+        }
+      ],
+      "total_duration": 300,
+      "carbon_emissions": {
+        "this_flight": 283000,
+        "typical_for_this_route": 282000,
+        "difference_percent": 0
+      },
+      "price": 739,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1ZNV1RNeE9Sb0xDTkRBQkJBQ0dnTlZVMFE0SEhEUXdBUT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkxZIiwiMzE5Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 09:40"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 13:30"
+          },
+          "duration": 290,
+          "airplane": "Boeing 777",
+          "airline": "El Al",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+          "travel_class": "Economy",
+          "flight_number": "LY 323",
+          "ticket_also_sold_by": [
+            "Air France"
+          ],
+          "legroom": "32 in",
+          "extensions": [
+            "Above average legroom (32 in)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 242 kg"
+          ]
+        }
+      ],
+      "total_duration": 290,
+      "carbon_emissions": {
+        "this_flight": 243000,
+        "typical_for_this_route": 282000,
+        "difference_percent": -14
+      },
+      "price": 739,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1ZNV1RNeU14b0xDTkRBQkJBQ0dnTlZVMFE0SEhEUXdBUT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkxZIiwiMzIzIl1dXQ=="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 05:05"
+          },
+          "arrival_airport": {
+            "name": "Warsaw Frederic Chopin",
+            "id": "WAW",
+            "time": "2025-10-15 08:10"
+          },
+          "duration": 245,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "LOT",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
+          "travel_class": "Economy",
+          "flight_number": "LO 152",
+          "ticket_also_sold_by": [
+            "El Al"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 179 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Warsaw Frederic Chopin",
+            "id": "WAW",
+            "time": "2025-10-15 16:25"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 18:50"
+          },
+          "duration": 145,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "LOT",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
+          "travel_class": "Economy",
+          "flight_number": "LO 335",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 107 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 495,
+          "name": "Warsaw Frederic Chopin",
+          "id": "WAW"
+        }
+      ],
+      "total_duration": 885,
+      "carbon_emissions": {
+        "this_flight": 287000,
+        "typical_for_this_route": 282000,
+        "difference_percent": 2
+      },
+      "price": 483,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ3RNVHpFMU1ueE1Uek16TlJvTENPVDRBaEFDR2dOVlUwUTRISERrK0FJPSIsW1siVExWIiwiMjAyNS0xMC0xNSIsIldBVyIsbnVsbCwiTE8iLCIxNTIiXSxbIldBVyIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkxPIiwiMzM1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 18:25"
+          },
+          "arrival_airport": {
+            "name": "V\u00e1clav Havel Airport Prague",
+            "id": "PRG",
+            "time": "2025-10-15 21:30"
+          },
+          "duration": 245,
+          "airplane": "Boeing 737",
+          "airline": "Smartwings",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QS.png",
+          "travel_class": "Economy",
+          "flight_number": "QS 1285",
+          "legroom": "29 in",
+          "extensions": [
+            "Below average legroom (29 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 194 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "V\u00e1clav Havel Airport Prague",
+            "id": "PRG",
+            "time": "2025-10-16 12:25"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-16 14:15"
+          },
+          "duration": 110,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Smartwings",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QS.png",
+          "travel_class": "Economy",
+          "flight_number": "QS 1034",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 95 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 895,
+          "name": "V\u00e1clav Havel Airport Prague",
+          "id": "PRG",
+          "overnight": true
+        }
+      ],
+      "total_duration": 1250,
+      "carbon_emissions": {
+        "this_flight": 289000,
+        "typical_for_this_route": 282000,
+        "difference_percent": 2
+      },
+      "price": 483,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QS.png",
+      "extensions": [
+        "Checked baggage not included in price",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZzFSVXpFeU9EVjhVVk14TURNMEdnc0lvUGtDRUFJYUExVlRSRGdjY0tENUFnPT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJQUkciLG51bGwsIlFTIiwiMTI4NSJdLFsiUFJHIiwiMjAyNS0xMC0xNiIsIkNERyIsbnVsbCwiUVMiLCIxMDM0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 00:45"
+          },
+          "arrival_airport": {
+            "name": "Larnaka International Airport",
+            "id": "LCA",
+            "time": "2025-10-15 01:45"
+          },
+          "duration": 60,
+          "airplane": "Airbus A321neo",
+          "airline": "Lufthansa",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+          "travel_class": "Economy",
+          "flight_number": "LH 685",
+          "legroom": "29 in",
+          "extensions": [
+            "Below average legroom (29 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 43 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Larnaka International Airport",
+            "id": "LCA",
+            "time": "2025-10-15 03:15"
+          },
+          "arrival_airport": {
+            "name": "Munich International Airport",
+            "id": "MUC",
+            "time": "2025-10-15 06:00"
+          },
+          "duration": 225,
+          "airplane": "Airbus A321neo",
+          "airline": "Lufthansa",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+          "travel_class": "Economy",
+          "flight_number": "LH 685",
+          "legroom": "29 in",
+          "extensions": [
+            "Below average legroom (29 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 174 kg"
+          ],
+          "overnight": true
+        },
+        {
+          "departure_airport": {
+            "name": "Munich International Airport",
+            "id": "MUC",
+            "time": "2025-10-15 09:45"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 11:20"
+          },
+          "duration": 95,
+          "airplane": "Airbus A320",
+          "airline": "Lufthansa",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+          "travel_class": "Economy",
+          "flight_number": "LH 2228",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Carbon emissions estimate: 78 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 90,
+          "name": "Larnaka International Airport",
+          "id": "LCA",
+          "overnight": true
+        },
+        {
+          "duration": 225,
+          "name": "Munich International Airport",
+          "id": "MUC"
+        }
+      ],
+      "total_duration": 695,
+      "carbon_emissions": {
+        "this_flight": 297000,
+        "typical_for_this_route": 282000,
+        "difference_percent": 5
+      },
+      "price": 496,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+      "extensions": [
+        "1 checked bag up to 23 kg included",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFaEpNU0RZNE5YeE1TRFk0Tlh4TVNESXlNamdhQ3dpQ2d3TVFBaG9EVlZORU9CeHdnb01EIixbWyJUTFYiLCIyMDI1LTEwLTE1IiwiTENBIixudWxsLCJMSCIsIjY4NSJdLFsiTENBIiwiMjAyNS0xMC0xNSIsIk1VQyIsbnVsbCwiTEgiLCI2ODUiXSxbIk1VQyIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkxIIiwiMjIyOCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 13:50"
+          },
+          "arrival_airport": {
+            "name": "Athens International Airport \"Eleftherios Venizelos\"",
+            "id": "ATH",
+            "time": "2025-10-15 16:00"
+          },
+          "duration": 130,
+          "airplane": "Airbus A320",
+          "airline": "Aegean",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/A3.png",
+          "travel_class": "Economy",
+          "flight_number": "A3 925",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 112 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Athens International Airport \"Eleftherios Venizelos\"",
+            "id": "ATH",
+            "time": "2025-10-15 18:50"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 21:20"
+          },
+          "duration": 210,
+          "airplane": "Airbus A321neo",
+          "airline": "Aegean",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/A3.png",
+          "travel_class": "Economy",
+          "flight_number": "A3 614",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Free Wi-Fi",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 155 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 170,
+          "name": "Athens International Airport \"Eleftherios Venizelos\"",
+          "id": "ATH"
+        }
+      ],
+      "total_duration": 510,
+      "carbon_emissions": {
+        "this_flight": 268000,
+        "typical_for_this_route": 282000,
+        "difference_percent": -5
+      },
+      "price": 618,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/A3.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ3RCTXpreU5YeEJNell4TkJvTENKYmlBeEFDR2dOVlUwUTRISENXNGdNPSIsW1siVExWIiwiMjAyNS0xMC0xNSIsIkFUSCIsbnVsbCwiQTMiLCI5MjUiXSxbIkFUSCIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkEzIiwiNjE0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 17:15"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 21:15"
+          },
+          "duration": 300,
+          "airplane": "Boeing 737",
+          "airline": "El Al",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+          "travel_class": "Economy",
+          "flight_number": "LY 325",
+          "ticket_also_sold_by": [
+            "Air France"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 282 kg"
+          ]
+        }
+      ],
+      "total_duration": 300,
+      "carbon_emissions": {
+        "this_flight": 283000,
+        "typical_for_this_route": 282000,
+        "difference_percent": 0
+      },
+      "price": 784,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1ZNV1RNeU5Sb0xDT1RqQkJBQ0dnTlZVMFE0SEhEazR3UT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkxZIiwiMzI1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 18:30"
+          },
+          "arrival_airport": {
+            "name": "Milano Malpensa Airport",
+            "id": "MXP",
+            "time": "2025-10-15 21:40"
+          },
+          "duration": 250,
+          "airplane": "Boeing 737",
+          "airline": "El Al",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+          "travel_class": "Economy",
+          "flight_number": "LY 387",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 236 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Milan Linate Airport",
+            "id": "LIN",
+            "time": "2025-10-16 20:20"
+          },
+          "arrival_airport": {
+            "name": "Paris Orly Airport",
+            "id": "ORY",
+            "time": "2025-10-16 21:45"
+          },
+          "duration": 85,
+          "airplane": "Airbus A319",
+          "airline": "ITA",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AZ.png",
+          "travel_class": "Economy",
+          "flight_number": "AZ 356",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Carbon emissions estimate: 83 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 1360,
+          "name": "Milan Linate Airport",
+          "id": "MXP",
+          "overnight": true
+        }
+      ],
+      "total_duration": 1695,
+      "carbon_emissions": {
+        "this_flight": 320000,
+        "typical_for_this_route": 282000,
+        "difference_percent": 13
+      },
+      "price": 809,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "extensions": [
+        "1 checked bag up to 23 kg included",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ3RNV1RNNE4zeEJXak0xTmhvTENJTDRCQkFDR2dOVlUwUTRISENDK0FRPSIsW1siVExWIiwiMjAyNS0xMC0xNSIsIk1YUCIsbnVsbCwiTFkiLCIzODciXSxbIkxJTiIsIjIwMjUtMTAtMTYiLCJPUlkiLG51bGwsIkFaIiwiMzU2Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 12:10"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 16:00"
+          },
+          "duration": 290,
+          "airplane": "Boeing 787",
+          "airline": "El Al",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+          "travel_class": "Economy",
+          "flight_number": "LY 327",
+          "ticket_also_sold_by": [
+            "Air France"
+          ],
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 205 kg"
+          ]
+        }
+      ],
+      "total_duration": 290,
+      "carbon_emissions": {
+        "this_flight": 206000,
+        "typical_for_this_route": 282000,
+        "difference_percent": -27
+      },
+      "price": 849,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LY.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1ZNV1RNeU54b0xDTWlXQlJBQ0dnTlZVMFE0SEhESWxnVT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkxZIiwiMzI3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 16:30"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 20:10"
+          },
+          "duration": 280,
+          "airplane": "Boeing 777",
+          "airline": "Air France",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AF.png",
+          "travel_class": "Economy",
+          "flight_number": "AF 963",
+          "ticket_also_sold_by": [
+            "El Al"
+          ],
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 239 kg"
+          ]
+        }
+      ],
+      "total_duration": 280,
+      "carbon_emissions": {
+        "this_flight": 240000,
+        "typical_for_this_route": 282000,
+        "difference_percent": -15
+      },
+      "price": 929,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AF.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1ZCUmprMk14b0xDSWpWQlJBQ0dnTlZVMFE0SEhDSTFRVT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIkFGIiwiOTYzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 10:30"
+          },
+          "arrival_airport": {
+            "name": "Paris Charles de Gaulle Airport",
+            "id": "CDG",
+            "time": "2025-10-15 14:30"
+          },
+          "duration": 300,
+          "airplane": "Airbus A320",
+          "airline": "Arkia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IZ.png",
+          "travel_class": "Economy",
+          "flight_number": "IZ 741",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 259 kg"
+          ]
+        }
+      ],
+      "total_duration": 300,
+      "carbon_emissions": {
+        "this_flight": 260000,
+        "typical_for_this_route": 282000,
+        "difference_percent": -8
+      },
+      "price": 960,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IZ.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Full refund for cancellations",
+        "Free change, possible fare difference",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1ZKV2pjME1Sb0xDS1R0QlJBQ0dnTlZVMFE0SEhDazdRVT0iLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJDREciLG51bGwsIklaIiwiNzQxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 18:25"
+          },
+          "arrival_airport": {
+            "name": "Paris Orly Airport",
+            "id": "ORY",
+            "time": "2025-10-15 22:30"
+          },
+          "duration": 305,
+          "airplane": "Boeing 737",
+          "airline": "Transavia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TO.png",
+          "travel_class": "Economy",
+          "flight_number": "TO 3459",
+          "extensions": [
+            "Carbon emissions estimate: 245 kg"
+          ]
+        }
+      ],
+      "total_duration": 305,
+      "carbon_emissions": {
+        "this_flight": 245000,
+        "typical_for_this_route": 282000,
+        "difference_percent": -13
+      },
+      "price": 1036,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TO.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Fare non-refundable, taxes may be refundable",
+        "Ticket changes for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1pVVHpNME5Ua2FDd2pWcUFZUUFob0RWVk5FT0J4dzFhZ0ciLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJPUlkiLG51bGwsIlRPIiwiMzQ1OSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Ben Gurion Airport",
+            "id": "TLV",
+            "time": "2025-10-15 14:10"
+          },
+          "arrival_airport": {
+            "name": "Paris Orly Airport",
+            "id": "ORY",
+            "time": "2025-10-15 18:15"
+          },
+          "duration": 305,
+          "airplane": "Boeing 737",
+          "airline": "Transavia",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TO.png",
+          "travel_class": "Economy",
+          "flight_number": "TO 3451",
+          "extensions": [
+            "Carbon emissions estimate: 245 kg"
+          ]
+        }
+      ],
+      "total_duration": 305,
+      "carbon_emissions": {
+        "this_flight": 245000,
+        "typical_for_this_route": 282000,
+        "difference_percent": -13
+      },
+      "price": 1089,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TO.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Fare non-refundable, taxes may be refundable",
+        "Ticket changes for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJY0d4UlZXd3hiWE10UldOQlFtb3dXbWRDUnkwdExTMHRMUzB0TFMxMmQzbGtOMEZCUVVGQlIycExZa0UwUTI1cVRrdEJFZ1pVVHpNME5URWFDd2luMGdZUUFob0RWVk5FT0J4d3A5SUciLFtbIlRMViIsIjIwMjUtMTAtMTUiLCJPUlkiLG51bGwsIlRPIiwiMzQ1MSJdXV0="
+    }
+  ],
+  "price_insights": {
+    "lowest_price": 483,
+    "price_level": "typical",
+    "typical_price_range": [
+      280,
+      520
+    ],
+    "price_history": [
+      [
+        1752872400,
+        409
+      ],
+      [
+        1752958800,
+        388
+      ],
+      [
+        1753045200,
+        388
+      ],
+      [
+        1753131600,
+        388
+      ],
+      [
+        1753218000,
+        389
+      ],
+      [
+        1753304400,
+        388
+      ],
+      [
+        1753390800,
+        378
+      ],
+      [
+        1753477200,
+        389
+      ],
+      [
+        1753563600,
+        389
+      ],
+      [
+        1753650000,
+        389
+      ],
+      [
+        1753736400,
+        390
+      ],
+      [
+        1753822800,
+        389
+      ],
+      [
+        1753909200,
+        392
+      ],
+      [
+        1753995600,
+        417
+      ],
+      [
+        1754082000,
+        421
+      ],
+      [
+        1754168400,
+        421
+      ],
+      [
+        1754254800,
+        420
+      ],
+      [
+        1754341200,
+        397
+      ],
+      [
+        1754427600,
+        397
+      ],
+      [
+        1754514000,
+        411
+      ],
+      [
+        1754600400,
+        332
+      ],
+      [
+        1754686800,
+        366
+      ],
+      [
+        1754773200,
+        411
+      ],
+      [
+        1754859600,
+        425
+      ],
+      [
+        1754946000,
+        425
+      ],
+      [
+        1755032400,
+        451
+      ],
+      [
+        1755118800,
+        423
+      ],
+      [
+        1755205200,
+        425
+      ],
+      [
+        1755291600,
+        426
+      ],
+      [
+        1755378000,
+        426
+      ],
+      [
+        1755464400,
+        425
+      ],
+      [
+        1755550800,
+        421
+      ],
+      [
+        1755637200,
+        446
+      ],
+      [
+        1755723600,
+        448
+      ],
+      [
+        1755810000,
+        447
+      ],
+      [
+        1755896400,
+        450
+      ],
+      [
+        1755982800,
+        450
+      ],
+      [
+        1756069200,
+        451
+      ],
+      [
+        1756155600,
+        448
+      ],
+      [
+        1756242000,
+        452
+      ],
+      [
+        1756328400,
+        448
+      ],
+      [
+        1756414800,
+        449
+      ],
+      [
+        1756501200,
+        457
+      ],
+      [
+        1756587600,
+        457
+      ],
+      [
+        1756674000,
+        457
+      ],
+      [
+        1756760400,
+        455
+      ],
+      [
+        1756846800,
+        477
+      ],
+      [
+        1756933200,
+        476
+      ],
+      [
+        1757019600,
+        477
+      ],
+      [
+        1757106000,
+        477
+      ],
+      [
+        1757192400,
+        445
+      ],
+      [
+        1757278800,
+        445
+      ],
+      [
+        1757365200,
+        481
+      ],
+      [
+        1757451600,
+        478
+      ],
+      [
+        1757538000,
+        446
+      ],
+      [
+        1757624400,
+        463
+      ],
+      [
+        1757710800,
+        482
+      ],
+      [
+        1757797200,
+        482
+      ],
+      [
+        1757883600,
+        482
+      ],
+      [
+        1757970000,
+        482
+      ],
+      [
+        1758056400,
+        483
+      ]
+    ]
+  },
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "TLV",
+            "name": "Ben Gurion Airport"
+          },
+          "city": "Tel Aviv-Yafo",
+          "country": "Israel",
+          "country_code": "IL",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4e63C86oyO0NLnyQWI9x_9hvFEvnelzdcWsD7SdOWtcg5s1LjiJ9stCgJqegVqoRkrxMuuEjmfl_heQ",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvWYb9eDBCdLxo8wHrosbHDGcMUhNaccLBR0I4wj8Fi4IJMB-cxVxStMZHMxcTUAL-yY2qP-6E6z704psILiO5Mw0_He3gtOR2kaW_Uys"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "CDG",
+            "name": "Paris Charles de Gaulle Airport"
+          },
+          "city": "Paris",
+          "country": "France",
+          "country_code": "FR",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQGx8ii2KbSDdbdzfKye5oDN2bwBA6audqI7XUEf2iMRZezpn_ZbQe1ZIuvUSH-8XOMe958umDwSsAF1w",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSyQJ-woNs0iO22mPSkmRUM5gcsTbbYeypQ6BBTeFxXr90mqTxZl57Fdq2CDuLn4w7cKZ8TT9_zZhOpF57rIpA7yWKQnqKvkKIf9Y-qJDo"
+        },
+        {
+          "airport": {
+            "id": "ORY",
+            "name": "Paris Orly Airport"
+          },
+          "city": "Paris",
+          "country": "France",
+          "country_code": "FR",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQGx8ii2KbSDdbdzfKye5oDN2bwBA6audqI7XUEf2iMRZezpn_ZbQe1ZIuvUSH-8XOMe958umDwSsAF1w",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSyQJ-woNs0iO22mPSkmRUM5gcsTbbYeypQ6BBTeFxXr90mqTxZl57Fdq2CDuLn4w7cKZ8TT9_zZhOpF57rIpA7yWKQnqKvkKIf9Y-qJDo"
+        }
+      ]
+    },
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "CDG",
+            "name": "Paris Charles de Gaulle Airport"
+          },
+          "city": "Paris",
+          "country": "France",
+          "country_code": "FR",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQGx8ii2KbSDdbdzfKye5oDN2bwBA6audqI7XUEf2iMRZezpn_ZbQe1ZIuvUSH-8XOMe958umDwSsAF1w",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSyQJ-woNs0iO22mPSkmRUM5gcsTbbYeypQ6BBTeFxXr90mqTxZl57Fdq2CDuLn4w7cKZ8TT9_zZhOpF57rIpA7yWKQnqKvkKIf9Y-qJDo"
+        },
+        {
+          "airport": {
+            "id": "ORY",
+            "name": "Paris Orly Airport"
+          },
+          "city": "Paris",
+          "country": "France",
+          "country_code": "FR",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQGx8ii2KbSDdbdzfKye5oDN2bwBA6audqI7XUEf2iMRZezpn_ZbQe1ZIuvUSH-8XOMe958umDwSsAF1w",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSyQJ-woNs0iO22mPSkmRUM5gcsTbbYeypQ6BBTeFxXr90mqTxZl57Fdq2CDuLn4w7cKZ8TT9_zZhOpF57rIpA7yWKQnqKvkKIf9Y-qJDo"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "TLV",
+            "name": "Ben Gurion Airport"
+          },
+          "city": "Tel Aviv-Yafo",
+          "country": "Israel",
+          "country_code": "IL",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4e63C86oyO0NLnyQWI9x_9hvFEvnelzdcWsD7SdOWtcg5s1LjiJ9stCgJqegVqoRkrxMuuEjmfl_heQ",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvWYb9eDBCdLxo8wHrosbHDGcMUhNaccLBR0I4wj8Fi4IJMB-cxVxStMZHMxcTUAL-yY2qP-6E6z704psILiO5Mw0_He3gtOR2kaW_Uys"
+        }
+      ]
+    }
+  ]
+}

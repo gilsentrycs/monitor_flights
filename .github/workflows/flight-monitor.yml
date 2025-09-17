@@ -1,0 +1,55 @@
+name: Smart Flight Monitoring
+on:
+  schedule:
+    # Balanced strategy: 7 runs over 30 days (182 API calls, 84% quota)
+    - cron: '0 10 17 9 * *'   # Run 1: Sept 17 - Baseline market scan
+    - cron: '0 10 23 9 * *'   # Run 2: Sept 23 - Early trend detection  
+    - cron: '0 10 26 9 * *'   # Run 3: Sept 26 - Early trend detection
+    - cron: '0 10 2 10 * *'   # Run 4: Oct 2 - Market trend monitoring
+    - cron: '0 10 8 10 * *'   # Run 5: Oct 8 - Peak season preparation
+    - cron: '0 10 13 10 * *'  # Run 6: Oct 13 - Peak season preparation
+    - cron: '0 10 17 10 * *'  # Run 7: Oct 17 - Final month analysis
+  
+  workflow_dispatch:  # Allow manual runs for testing
+
+jobs:
+  flight-monitor:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run automated flight monitor
+      env:
+        SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        EMAIL_USER: ${{ secrets.EMAIL_USER }}
+        EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+        EMAIL_TO: ${{ secrets.EMAIL_TO }}
+      run: |
+        echo "🚀 Starting automated flight monitor..."
+        python automated_flight_monitor.py
+        echo "✅ Flight monitor completed"
+    
+    - name: Upload backup data
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: flight-data-backup-${{ github.run_number }}
+        path: flight_monitor_backup_*.json
+        retention-days: 30
+    
+    - name: Log completion
+      run: |
+        echo "📊 Flight monitoring job completed at $(date)"
+        echo "🔗 Check email for detailed report"
