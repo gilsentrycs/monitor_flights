@@ -1,14 +1,9 @@
 name: Configurable Flight Monitor
 on:
   schedule:
-    # Balanced strategy: 7 runs over 30 days (182 API calls, 84% quota)
-    - cron: '0 10 17 9 * *'   # Run 1: Sept 17 - Baseline market scan
-    - cron: '0 10 23 9 * *'   # Run 2: Sept 23 - Early trend detection  
-    - cron: '0 10 26 9 * *'   # Run 3: Sept 26 - Early trend detection
-    - cron: '0 10 2 10 * *'   # Run 4: Oct 2 - Market trend monitoring
-    - cron: '0 10 8 10 * *'   # Run 5: Oct 8 - Peak season preparation
-    - cron: '0 10 13 10 * *'  # Run 6: Oct 13 - Peak season preparation
-    - cron: '0 10 17 10 * *'  # Run 7: Oct 17 - Final month analysis
+    # Smart monitoring: Every 4 days at 10 AM UTC (7 runs per month)
+    # This provides balanced coverage while staying within quota limits
+    - cron: '0 10 */4 * *'   # Every 4th day of the month at 10:00 AM UTC
   
   workflow_dispatch:  # Allow manual runs for testing
 
