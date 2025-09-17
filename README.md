@@ -39,7 +39,7 @@ Add these 4 secrets:
 
 | Secret Name | Value | Get It From |
 |-------------|-------|-------------|
-| `SERPAPI_KEY` | Your SerpApi API key | [serpapi.com](https://serpapi.com/users/sign_up) (free 100 searches/month) |
+| `SERPAPI_KEY` | Your SerpApi API key | [serpapi.com](https://serpapi.com/users/sign_up) (free 250 searches/month) |
 | `EMAIL_USER` | Your Gmail address | Your Gmail account |
 | `EMAIL_PASS` | Gmail app password | [Google App Passwords](https://myaccount.google.com/apppasswords) |
 | `EMAIL_TO` | Where to send reports | Any email address |
@@ -99,8 +99,8 @@ TRIP_DURATION_DAYS=7
 
 ## 📊 API Usage & Costs
 
-- **Free SerpApi**: 100 searches/month (3-4 complete scans)
-- **Paid Plans**: 250+ searches/month (7+ complete scans)
+- **Free SerpApi**: 250 searches/month (9+ complete scans)
+- **Paid Plans**: 500+ searches/month (19+ complete scans)
 - **Typical Usage**: ~26 searches per scan
 - **Auto Schedule**: 7 scans per month (efficient quota usage)
 
