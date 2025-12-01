@@ -1,9 +1,9 @@
 name: Configurable Flight Monitor
 on:
   schedule:
-    # Smart monitoring: Every 4 days at 10 AM UTC (7 runs per month)
-    # This provides balanced coverage while staying within quota limits
-    - cron: '0 10 */4 * *'   # Every 4th day of the month at 10:00 AM UTC
+    # Smart monitoring: Every 4 days at 10 AM UTC during monitoring season
+    # Runs Dec-Apr to monitor March-April 2026 flights
+    - cron: '0 10 */4 * *'   # Every 4th day at 10:00 AM UTC year-round
   
   workflow_dispatch:  # Allow manual runs for testing
 
